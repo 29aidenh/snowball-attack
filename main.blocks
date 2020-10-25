@@ -1,0 +1,27 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="YeR-]u?;YOOedmbZR/1#">mySprite</variable><variable type="KIND_SpriteKind" id="j4^,Rh$B2$`Nj~W)H|Tx">Player</variable><variable type="KIND_SpriteKind" id="1v/V~G2vFO}V{/viuS=D">Projectile</variable><variable type="KIND_SpriteKind" id="a6Zw-PbHNoeLF4bB[sEL">Food</variable><variable type="KIND_SpriteKind" id="o9HgQ|a;y%mAVFB0W/.0">Enemy</variable></variables><block type="pxt-on-start" id="%w(M=slKHYAD|2Fycf89" x="0" y="0"><statement name="HANDLER"><block type="variables_set" id="bZXCsMv6ecQd_dx,,ho@"><field name="VAR" id="YeR-]u?;YOOedmbZR/1#">mySprite</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="zDteQY)%ujqhxBb_j]!3"><value name="img"><shadow type="screen_image_picker" id="qVA3)=w(+=s4~m+x~/_n"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 9 9 9 9 9 9 9 9 . . . . 
+. . . . 9 9 9 9 9 9 9 9 . . . . 
+. . . . 9 5 5 5 5 5 5 9 . . . . 
+. . . . 9 5 f 5 5 f 5 9 . . . . 
+. . . . . 5 f 5 5 f 5 . . . . . 
+1 1 5 8 8 5 5 5 5 5 5 8 8 5 1 1 
+1 1 5 8 8 6 6 6 6 6 6 8 8 5 1 1 
+. 5 5 8 8 6 6 6 6 6 6 8 8 5 5 . 
+. . . . . 6 6 6 6 6 6 . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="=pGDIqgzgw7C9kdOiV|f"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="spritesetpos" id="dV*B*II9yi2t,2TSdq]S"><value name="sprite"><block type="variables_get" id="e*?W]WwPgK:Nu8F2S[:{"><field name="VAR" id="YeR-]u?;YOOedmbZR/1#">mySprite</field></block></value><value name="x"><shadow type="positionPicker" id="k|l$+1$jmMDM#Pa62:i/"><field name="index">20</field></shadow></value><value name="y"><shadow type="positionPicker" id="o,)JT5er!z($M=/w|.SW"><field name="index">70</field></shadow></value><next><block type="Sprite_blockCombine_set" id="M?OLD1SJP26t}!9qJ?V["><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get" id="i/G.YdisB7)$HkSwkMRh"><field name="VAR" id="YeR-]u?;YOOedmbZR/1#">mySprite</field></block></value><value name="value"><shadow type="math_number" id="lvHzy*=l6)LrJOl94q!("><field name="NUM">500</field></shadow></value><next><block type="tilemap_editor" id="P+zPo;kneOWAn_*RPUge"><field name="tilemap">tiles.createTilemap(hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`, [myTiles.transparency16], TileScale.Sixteen)</field></block></next></block></next></block></next></block></statement></block></xml>
