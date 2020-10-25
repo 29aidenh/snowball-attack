@@ -1,4 +1,14 @@
-let mySprite = sprites.create(img`
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
+        mySprite.setVelocity(0, -250)
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+let mySprite2: Sprite = null
+let mySprite: Sprite = null
+mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -18,13 +28,29 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 mySprite.setPosition(20, 70)
 mySprite.ay = 500
-tiles.setTilemap(tiles.createTilemap(hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+tiles.setTilemap(tiles.createTilemap(hex`0a0008000101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101`, img`
     . . . . . . . . . . 
     . . . . . . . . . . 
     . . . . . . . . . . 
     . . . . . . . . . . 
     . . . . . . . . . . 
     . . . . . . . . . . 
-    . . . . . . . . . . 
-    . . . . . . . . . . 
-    `, [myTiles.transparency16], TileScale.Sixteen))
+    2 2 2 2 2 2 2 2 2 2 
+    2 2 2 2 2 2 2 2 2 2 
+    `, [myTiles.transparency16,myTiles.tile1], TileScale.Sixteen))
+game.onUpdateInterval(750, function () {
+    mySprite2 = sprites.create(img`
+        . f f f f f f . 
+        f f 5 5 5 5 f f 
+        f 5 5 5 5 5 5 f 
+        f 5 5 5 5 5 5 f 
+        f 5 5 5 5 5 5 f 
+        f 5 5 5 5 5 5 f 
+        f f 5 5 5 5 f f 
+        . f f f f f f . 
+        `, SpriteKind.Projectile)
+    mySprite2.setVelocity(randint(-100, -80), 0)
+    mySprite2.setPosition(randint(-100, 80), 0)
+    info.changeScoreBy(1)
+    tiles.placeOnTile(mySprite2, tiles.getTileLocation(9, 5))
+})
