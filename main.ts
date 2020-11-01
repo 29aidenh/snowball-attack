@@ -28,7 +28,7 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 mySprite.setPosition(20, 70)
-mySprite.ay = 250
+mySprite.ay = 550
 tiles.setTilemap(tiles.createTilemap(hex`0a0008000101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101`, img`
     . . . . . . . . . . 
     . . . . . . . . . . 
