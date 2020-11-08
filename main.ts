@@ -7,7 +7,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     game.over(false)
 })
 let mySprite2: Sprite = null
-let projectile: Sprite = null
 let mySprite: Sprite = null
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
@@ -40,25 +39,7 @@ tiles.setTilemap(tiles.createTilemap(hex`0a0008000101010101010101010101010101010
     2 2 2 2 2 2 2 2 2 2 
     `, [myTiles.transparency16,myTiles.tile1], TileScale.Sixteen))
 game.onUpdateInterval(5000, function () {
-    projectile = sprites.createProjectileFromSide(img`
-        . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-        . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        . 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
-        . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-        `, randint(-100, -80), 0)
-    tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
+	
 })
 game.onUpdateInterval(1000, function () {
     mySprite2 = sprites.createProjectileFromSide(img`
@@ -73,6 +54,6 @@ game.onUpdateInterval(1000, function () {
         `, randint(-100, -80), 0)
     tiles.placeOnTile(mySprite2, tiles.getTileLocation(9, 5))
 })
-game.onUpdateInterval(200, function () {
+game.onUpdateInterval(1000, function () {
     info.changeScoreBy(1)
 })
